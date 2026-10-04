@@ -16,8 +16,7 @@ import type { Country } from "../types/country";
 
 export default function HomePage() {
   const { t } = useTranslation();
-  const { data: countryResult, isFetching } = useCountries();
-  const countries = countryResult?.countries ?? [];
+  const { data: countries } = useCountries();
   const { search, setSearch, filter, setFilter, visibleCountries } =
     useCountryFilters(countries);
   const {
@@ -112,16 +111,6 @@ export default function HomePage() {
       />
       <MapLegend />
 
-      {isFetching && (
-        <span className="data-loading" role="status">
-          {t("loadingCountries")}
-        </span>
-      )}
-      {countryResult?.isFallback && (
-        <div className="api-note" role="status">
-          {t("offlineData")}
-        </div>
-      )}
       {selectedCountry && (
         <CountryPopup
           country={selectedCountry}

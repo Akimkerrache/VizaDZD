@@ -1,11 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
-import { localCountries } from "../services/country.service";
-import { getCountryCatalog } from "../services/country.service";
+import { featuredCountries } from "../data/countries/index";
 
 export function useCountries() {
   return useQuery({
     queryKey: ["countries"],
-    queryFn: getCountryCatalog,
-    placeholderData: { countries: localCountries, isFallback: false },
+    queryFn: async () => featuredCountries,
+    initialData: featuredCountries,
+    staleTime: Infinity,
+    gcTime: Infinity,
+    refetchOnWindowFocus: false,
   });
 }
