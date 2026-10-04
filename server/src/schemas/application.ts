@@ -15,7 +15,11 @@ const travelDateSchema = z
 
 export const applicationSchema = z
   .object({
-    countryCode: z.string().trim().length(2).toUpperCase(),
+    countryCode: z
+      .string()
+      .trim()
+      .regex(/^[A-Z]{2}(?:-[A-Z]{3})?$/i)
+      .transform((value) => value.toUpperCase()),
     countryName: z.string().trim().min(1).max(100),
     fullName: z.string().trim().min(2).max(120),
     email: z.string().trim().email().max(254),
@@ -27,7 +31,7 @@ export const applicationSchema = z
       .regex(/^(?=.*\d)[+()\d.\-\s]+$/, "Enter a valid phone number"),
     travelDate: travelDateSchema.optional().or(z.literal("")),
     message: z.string().trim().max(1500).optional(),
-    language: z.enum(["fr", "en", "ar", "tz"]).default("fr"),
+    language: z.enum(["fr", "en", "ar", "tz", "kab"]).default("fr"),
   })
   .strict();
 

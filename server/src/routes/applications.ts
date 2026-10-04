@@ -6,6 +6,7 @@ import { notifyApplication } from "../services/mailer.js";
 import { asyncHandler } from "../middleware/asyncHandler.js";
 import { countries } from "../data/countries.js";
 import { HttpError } from "../middleware/errors.js";
+import mongoose from "mongoose";
 
 const router = Router();
 const applicationLimiter = rateLimit({
@@ -22,10 +23,16 @@ router.post(
   asyncHandler(async (request, response) => {
     const input = applicationSchema.parse(request.body);
     const country = countries.find(({ code }) => code === input.countryCode);
-    if (!country) {
-      throw new HttpError(400, "The selected destination is unavailable");
+    if (mongoose.connection.readyState !== 1) {
+      throw new HttpError(
+        503,
+        "Application submissions are temporarily unavailable. Please try again shortly.",
+      );
     }
-    const canonicalInput = { ...input, countryName: country.name };
+    const canonicalInput = {
+      ...input,
+      countryName: country?.name ?? input.countryName,
+    };
     const application = await Application.create(canonicalInput);
     response.status(201).json({
       id: application.id,

@@ -1,10 +1,10 @@
+import "./loadEnv.js";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import { pinoHttp } from "pino-http";
 import { rateLimit } from "express-rate-limit";
 import mongoose from "mongoose";
-import { env } from "./config/env.js";
 import countriesRouter from "./routes/countries.js";
 import applicationsRouter from "./routes/applications.js";
 import {
@@ -14,14 +14,19 @@ import {
 } from "./middleware/errors.js";
 
 export const app = express();
-if (env.NODE_ENV === "production") app.set("trust proxy", 1);
+if (process.env.NODE_ENV === "production") app.set("trust proxy", 1);
+
+const allowedOrigins = (process.env.CLIENT_ORIGIN ?? "")
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
 
 app.disable("x-powered-by");
 app.use(helmet());
 app.use(
   cors({
     origin(origin, callback) {
-      if (!origin || env.allowedOrigins.includes(origin)) {
+      if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
         return;
       }

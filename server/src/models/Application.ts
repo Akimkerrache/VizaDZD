@@ -7,7 +7,7 @@ const applicationSchema = new mongoose.Schema(
       required: true,
       uppercase: true,
       minlength: 2,
-      maxlength: 2,
+      maxlength: 6,
       index: true,
     },
     countryName: { type: String, required: true, trim: true, maxlength: 100 },
@@ -25,7 +25,7 @@ const applicationSchema = new mongoose.Schema(
     message: { type: String, trim: true, maxlength: 1500 },
     language: {
       type: String,
-      enum: ["fr", "en", "ar", "tz"],
+      enum: ["fr", "en", "ar", "tz", "kab"],
       default: "fr",
       required: true,
     },

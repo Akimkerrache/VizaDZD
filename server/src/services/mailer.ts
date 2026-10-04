@@ -1,15 +1,20 @@
+import "../loadEnv.js";
 import nodemailer from "nodemailer";
-import { env } from "../config/env.js";
 import type { ApplicationInput } from "../schemas/application.js";
 import type { Logger } from "pino";
 
-const configured = Boolean(env.SMTP_USER && env.SMTP_PASSWORD);
+const configured = Boolean(
+  process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASSWORD,
+);
 const transporter = configured
   ? nodemailer.createTransport({
-      host: env.SMTP_HOST,
-      port: env.SMTP_PORT,
-      secure: env.SMTP_SECURE,
-      auth: { user: env.SMTP_USER, pass: env.SMTP_PASSWORD },
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      secure: process.env.SMTP_SECURE === "true",
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASSWORD,
+      },
       pool: true,
       maxConnections: 3,
       maxMessages: 100,
@@ -48,7 +53,7 @@ export async function notifyApplication(
   );
   const messages = [
     transporter.sendMail({
-      from: env.SMTP_FROM,
+      from: process.env.SMTP_FROM || process.env.SMTP_USER,
       to: input.email,
       subject: `VisaDZD — Votre demande pour ${input.countryName}`,
       text: `Bonjour ${input.fullName},\n\nNous avons reçu votre demande d’accompagnement pour ${input.countryName}. Notre équipe vous contactera prochainement.\n\nRéférence : ${applicationId}\n\nVisaDZD`,
@@ -56,11 +61,11 @@ export async function notifyApplication(
     }),
   ];
 
-  if (env.ADMIN_EMAIL) {
+  if (process.env.ADMIN_EMAIL) {
     messages.push(
       transporter.sendMail({
-        from: env.SMTP_FROM,
-        to: env.ADMIN_EMAIL,
+        from: process.env.SMTP_FROM || process.env.SMTP_USER,
+        to: process.env.ADMIN_EMAIL,
         replyTo: input.email,
         subject: `Nouvelle demande visa — ${input.countryName}`,
         text: `Référence : ${applicationId}\nPays : ${input.countryName} (${input.countryCode})\nNom : ${input.fullName}\nE-mail : ${input.email}\nTéléphone : ${input.phone}\nDépart : ${input.travelDate || "Non précisée"}\nMessage : ${input.message || "Aucun message"}`,
