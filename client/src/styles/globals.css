@@ -352,15 +352,20 @@ a:focus-visible {
 .explorer-card {
   position: absolute;
   z-index: 4;
-  top: 280px;
+  top: clamp(300px, 39dvh, 320px);
   left: calc(54px + var(--safe-left));
   width: min(362px, calc(100vw - 40px));
+  max-height: calc(100dvh - clamp(300px, 39dvh, 360px) - 24px);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
   padding: 16px;
   border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: 6px;
   background: rgba(11, 16, 16, 0.89);
   box-shadow: 0 18px 55px #0005;
   backdrop-filter: blur(20px);
+  overflow: hidden;
 }
 .explorer-topline {
   display: flex;
@@ -385,6 +390,8 @@ a:focus-visible {
   letter-spacing: 0.06em;
 }
 .search-wrap {
+  width: 100%;
+  min-width: 0;
   min-height: 39px;
   display: flex;
   align-items: center;
@@ -407,6 +414,9 @@ a:focus-visible {
   background: transparent;
   font-size: 11px;
 }
+.search-wrap kbd {
+  flex: 0 0 auto;
+}
 .search-wrap input::placeholder {
   color: #87948c;
 }
@@ -422,11 +432,31 @@ a:focus-visible {
     monospace;
 }
 .filter-row {
+  width: 100%;
+  min-width: 0;
   display: flex;
-  gap: 5px;
+  gap: 6px;
   margin: 11px 0 9px;
+  padding: 1px 1px 7px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139, 153, 144, 0.45) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+.filter-row::-webkit-scrollbar {
+  height: 4px;
+}
+.filter-row::-webkit-scrollbar-track {
+  background: transparent;
+}
+.filter-row::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(139, 153, 144, 0.4);
 }
 .filter-chip {
+  flex: 0 0 auto;
   padding: 6px 8px;
   border: 1px solid transparent;
   border-radius: 3px;
@@ -451,7 +481,8 @@ a:focus-visible {
 }
 .country-results {
   display: grid;
-  max-height: min(310px, 37dvh);
+  min-height: 0;
+  max-height: min(310px, calc(100dvh - 520px));
   overflow: auto;
   overscroll-behavior: contain;
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
@@ -1198,6 +1229,10 @@ a:focus-visible {
   .explorer-card {
     left: calc(34px + var(--safe-left));
     width: 330px;
+    max-height: calc(100dvh - 320px);
+  }
+  .country-results {
+    max-height: min(260px, calc(100dvh - 520px));
   }
   .country-panel {
     right: calc(22px + var(--safe-right));
@@ -1273,6 +1308,7 @@ a:focus-visible {
     bottom: calc(14px + var(--safe-bottom));
     left: calc(12px + var(--safe-left));
     width: auto;
+    max-height: min(46dvh, 390px);
     padding: 11px;
   }
   .explorer-topline {
@@ -1284,11 +1320,8 @@ a:focus-visible {
   .filter-row {
     gap: 4px;
     margin: 7px 0;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .filter-row::-webkit-scrollbar {
-    display: none;
+    padding-bottom: 5px;
+    scrollbar-width: thin;
   }
   .filter-chip {
     flex: 0 0 auto;
@@ -1296,18 +1329,21 @@ a:focus-visible {
     font-size: 8px;
   }
   .country-results {
-    display: flex;
-    gap: 6px;
-    max-height: none;
-    overflow: auto hidden;
-    padding-bottom: 2px;
+    display: grid;
+    flex: 1 1 auto;
+    max-height: min(25dvh, 220px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0 2px 2px 0;
   }
   .country-result {
-    flex: 0 0 152px;
+    width: 100%;
     min-height: 43px;
     padding: 0 6px;
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    border-radius: 4px;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 0;
   }
   .result-flag {
     width: 24px;

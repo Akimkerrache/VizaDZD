@@ -2,6 +2,12 @@ export const API_BASE_URL =
   import.meta.env.VITE_API_URL ?? "http://localhost:4000/api";
 export const MAP_STYLE =
   "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
+export const COUNTRY_MARKER_TIER_MIN_ZOOM = {
+  1: -1.2,
+  2: 0.75,
+  3: 1.8,
+  4: 2.8,
+} as const;
 /** Public Carto vector basemap: free to use, no client key required. */
 export function getInitialMapView(
   viewportWidth = typeof window === "undefined" ? 1440 : window.innerWidth,

@@ -2,16 +2,17 @@ import { Layer, Source } from "react-map-gl/maplibre";
 import type { ExpressionSpecification, FilterSpecification } from "maplibre-gl";
 import type { CountryMarkerCollection } from "../../hooks/useVisaMap";
 import { VISA_COLORS } from "../../lib/visa-colors";
+import { COUNTRY_MARKER_TIER_MIN_ZOOM } from "../../lib/constants";
 
 interface CountryMarkersProps {
   data: CountryMarkerCollection;
 }
 
 const visibilityTiers = [
-  { tier: 1, minzoom: -1.2 },
-  { tier: 2, minzoom: 1.65 },
-  { tier: 3, minzoom: 2.45 },
-  { tier: 4, minzoom: 3.15 },
+  { tier: 1, minzoom: COUNTRY_MARKER_TIER_MIN_ZOOM[1] },
+  { tier: 2, minzoom: COUNTRY_MARKER_TIER_MIN_ZOOM[2] },
+  { tier: 3, minzoom: COUNTRY_MARKER_TIER_MIN_ZOOM[3] },
+  { tier: 4, minzoom: COUNTRY_MARKER_TIER_MIN_ZOOM[4] },
 ] as const;
 
 export const VISA_MARKER_HIT_LAYER_IDS = visibilityTiers.map(

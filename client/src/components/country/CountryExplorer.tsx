@@ -81,7 +81,7 @@ export default function CountryExplorer({
         ))}
       </div>
       <div className="country-results" aria-live="polite">
-        {countries.slice(0, 6).map((country) => (
+        {countries.map((country) => (
           <button
             key={country.code}
             type="button"

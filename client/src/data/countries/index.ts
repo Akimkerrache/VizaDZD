@@ -1313,9 +1313,9 @@ const curatedGuidance: Record<string, CuratedVisaGuidance> = {
   },
   id: {
     name: "Indonesia",
-    status: "visa-required",
-    stayDays: 0,
-    processingDays: "Varies by embassy",
+    status: "e-visa",
+    stayDays: 60,
+    processingDays: "Online",
     fee: null,
     summary:
       "A visa must be obtained from the Indonesia embassy or consulate before travelling.",

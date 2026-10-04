@@ -4,6 +4,7 @@ import type { MapLayerMouseEvent, MapRef } from "react-map-gl/maplibre";
 import type { Country } from "../types/country";
 import type { VisaStatus } from "../types/visa";
 import { normalizeVisaStatus } from "../lib/visa-colors";
+import { COUNTRY_MARKER_TIER_MIN_ZOOM } from "../lib/constants";
 import { useMapViewport } from "./useMapViewport";
 
 export interface CountryMarkerProperties {
@@ -100,7 +101,14 @@ export function useVisaMap(
     const map = mapRef.current?.getMap();
     if (!map?.isStyleLoaded()) return;
     const zoom = map.getZoom();
-    const maxTier = zoom >= 3.15 ? 4 : zoom >= 2.45 ? 3 : zoom >= 1.65 ? 2 : 1;
+    const maxTier =
+      zoom >= COUNTRY_MARKER_TIER_MIN_ZOOM[4]
+        ? 4
+        : zoom >= COUNTRY_MARKER_TIER_MIN_ZOOM[3]
+          ? 3
+          : zoom >= COUNTRY_MARKER_TIER_MIN_ZOOM[2]
+            ? 2
+            : 1;
     for (const country of countries) {
       if (markerTier(country) > maxTier) continue;
       const imageId = `visa-flag-${country.code}`;
@@ -125,9 +133,14 @@ export function useVisaMap(
   useEffect(() => {
     const map = mapRef.current?.getMap();
     if (!loaded || !map) return;
+    // The React map load event can precede style readiness. Keep a listener
+    // installed until the style is ready so flag images register on first view.
+    const onStyleData = () => registerFlagIcons();
+    map.on("styledata", onStyleData);
     registerFlagIcons();
     map.on("zoomend", registerFlagIcons);
     return () => {
+      map.off("styledata", onStyleData);
       map.off("zoomend", registerFlagIcons);
     };
   }, [loaded, registerFlagIcons]);
