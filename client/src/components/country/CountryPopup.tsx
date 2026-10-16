@@ -107,7 +107,7 @@ export default function CountryPopup({
           <span>{country.requirements.length.toString().padStart(2, "0")}</span>
         </h3>
         <ul>
-          {country.requirements.slice(0, 4).map((requirement, index) => (
+          {country.requirements.map((requirement, index) => (
             <li key={requirement}>
               <span className="requirement-index">
                 {(index + 1).toString().padStart(2, "0")}

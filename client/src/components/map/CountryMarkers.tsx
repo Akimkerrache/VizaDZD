@@ -142,15 +142,19 @@ export default function CountryMarkers({ data }: CountryMarkersProps) {
               "interpolate",
               ["linear"],
               ["zoom"],
+              -1.2,
+              0.32,
               1,
-              0.48,
+              0.4,
               4,
               0.64,
               8,
               0.78,
             ],
-            "icon-allow-overlap": false,
-            "icon-ignore-placement": false,
+            // These are country markers, not optional map labels: preserve
+            // every flag even when basemap labels or nearby countries collide.
+            "icon-allow-overlap": true,
+            "icon-ignore-placement": true,
             "icon-padding": 5,
           }}
           paint={{

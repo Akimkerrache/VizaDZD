@@ -196,7 +196,7 @@ a:focus-visible {
   top: 0;
   left: 0;
   right: 0;
-  min-height: calc(76px + var(--safe-top));
+  min-height: calc(66px + var(--safe-top));
   padding: var(--safe-top) calc(40px + var(--safe-right)) 0
     calc(40px + var(--safe-left));
   display: flex;
@@ -713,7 +713,7 @@ a:focus-visible {
   z-index: 6;
   top: calc(106px + var(--safe-top));
   right: calc(34px + var(--safe-right));
-  width: min(340px, calc(100vw - 32px));
+  width: min(440px, calc(100vw - 32px));
   max-height: calc(100dvh - 150px - var(--safe-top) - var(--safe-bottom));
   overflow: auto;
   padding: 19px;

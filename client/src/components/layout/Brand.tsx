@@ -4,9 +4,10 @@ export default function Brand() {
   const { t } = useTranslation();
   return (
     <a className="brand" href="/" aria-label="VisaDZD — accueil">
-      <span className="brand-mark" aria-hidden="true">
+      <img src="/logo-v.png" alt="VisaDZD Logo" className="h-8" />
+      {/* <span className="brand-mark" aria-hidden="true">
         <span />
-      </span>
+      </span> */}
       <span className="brand-name">
         VISA<span>DZD</span>
         <small>GLOBAL INTELLIGENCE</small>

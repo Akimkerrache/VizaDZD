@@ -1005,9 +1005,16 @@ const curatedGuidance: Record<string, CuratedVisaGuidance> = {
     summary:
       "A short-stay Schengen visa is required for tourism, family visits and business.",
     requirements: [
-      "Passport valid for 3 months after return",
-      "Proof of accommodation and financial means",
-      "Travel insurance covering at least €30,000",
+      "Formulaire de demande de visa",
+      "Photo d'identité",
+      "Passport: Original valable au moins 3 mois après la date de sortie prévue de l'espace Schengen, Contenant au moins 2 pages vierges consécutives.",
+      "Assurance voyage : Couverture médicale pour les urgences et rapatriement, d'un montant minimum de 30 000 €.",
+      "Justificatif d'hébergement: Réservation d'hôtel confirmée, ou attestation d'accueil/hébergement privé validée, ou preuve de propriété en France.",
+      "Transport / Trajet : Réservation de billet d'avion aller-retour (TELEX)",
+      "Preuve de situation socio-professionnelle : Salarié, commerçant, profession libérale, étudiant, retraité ou sans emploi (attestations de travail, registre de commerce, justificatifs de revenus, relevés bancaires des derniers mois, etc.).",
+      "Preuves de ressources financières : Relevés bancaires récents (en dinars et/ou compte devises) ou prise en charge financière.",
+      "État civil : Fiche familiale d'état civil (et/ou acte de naissance), traduites en français si elles sont établies en arabe.",
+      "Lettre d'invitation ou prise en charge par un résident en France, si applicable.",
     ],
     markerPriority: 1,
   },
@@ -1402,9 +1409,16 @@ const curatedGuidance: Record<string, CuratedVisaGuidance> = {
     summary:
       "A short-stay Schengen visa is required for Italy (tourism, family visits, business).",
     requirements: [
-      "Passport valid for 3 months after return",
-      "Proof of accommodation and financial means",
-      "Travel insurance covering at least €30,000",
+      "Formulaire de demande de visa",
+      "Photo d'identité",
+      "Passport: Original valable au moins 3 mois après la date de sortie prévue de l'espace Schengen, Contenant au moins 2 pages vierges consécutives.",
+      "Assurance voyage : Couverture médicale pour les urgences et rapatriement, d'un montant minimum de 30 000 €.",
+      "Justificatif d'hébergement: Réservation d'hôtel confirmée, ou attestation d'accueil/hébergement privé validée, ou preuve de propriété en Italy.",
+      "Transport / Trajet : Réservation de billet d'avion aller-retour (TELEX)",
+      "Preuve de situation socio-professionnelle : Salarié, commerçant, profession libérale, étudiant, retraité ou sans emploi (attestations de travail, registre de commerce, justificatifs de revenus, relevés bancaires des derniers mois, etc.).",
+      "Preuves de ressources financières : Relevés bancaires récents (en dinars et/ou compte devises) ou prise en charge financière.",
+      "État civil : Fiche familiale d'état civil (et/ou acte de naissance), traduites en français ou en italien si elles sont établies en arabe.",
+      "Lettre d'invitation ou prise en charge par un résident en Italy, si applicable.",
     ],
     markerPriority: 1,
   },
@@ -1968,10 +1982,10 @@ const curatedGuidance: Record<string, CuratedVisaGuidance> = {
   },
   ma: {
     name: "Morocco",
-    status: "visa-free",
+    status: "visa-required",
     stayDays: 90,
-    processingDays: "No processing",
-    fee: 0,
+    processingDays: "15–45 days",
+    fee: 60,
     summary:
       "Short tourist stays in Morocco are generally visa-free. Verify current entry rules before travelling.",
     requirements: [
@@ -2379,9 +2393,16 @@ const curatedGuidance: Record<string, CuratedVisaGuidance> = {
     summary:
       "A short-stay Schengen visa is required for Portugal (tourism, family visits, business).",
     requirements: [
-      "Passport valid for 3 months after return",
-      "Proof of accommodation and financial means",
-      "Travel insurance covering at least €30,000",
+      "Formulaire de demande de visa",
+      "Photo d'identité",
+      "Passport: Original valable au moins 3 mois après la date de sortie prévue de l'espace Schengen, Contenant au moins 2 pages vierges consécutives.",
+      "Assurance voyage : Couverture médicale pour les urgences et rapatriement, d'un montant minimum de 30 000 €.",
+      "Justificatif d'hébergement: Réservation d'hôtel confirmée, ou attestation d'accueil/hébergement privé validée, ou preuve de propriété en Portugal.",
+      "Transport / Trajet : Réservation de billet d'avion aller-retour (TELEX)",
+      "Preuve de situation socio-professionnelle : Salarié, commerçant, profession libérale, étudiant, retraité ou sans emploi (attestations de travail, registre de commerce, justificatifs de revenus, relevés bancaires des derniers mois, etc.).",
+      "Preuves de ressources financières : Relevés bancaires récents (en dinars et/ou compte devises) ou prise en charge financière.",
+      "État civil : Fiche familiale d'état civil (et/ou acte de naissance), traduites en français si elles sont établies en arabe.",
+      "Lettre d'invitation ou prise en charge par un résident en Portugal, si applicable.",
     ],
     markerPriority: 3,
   },
@@ -2775,11 +2796,18 @@ const curatedGuidance: Record<string, CuratedVisaGuidance> = {
     stayDays: 90,
     processingDays: "15–30 days",
     fee: 90,
-    summary: "A Schengen short-stay visa is required.",
+    summary: "Un visa Schengen est requis.",
     requirements: [
-      "Passport valid for 3 months after return",
-      "Travel medical insurance",
-      "Proof of funds and itinerary",
+      "Formulaire de demande de visa",
+      "Photo d'identité",
+      "Passport: Original valable au moins 3 mois après la date de sortie prévue de l'espace Schengen, Contenant au moins 2 pages vierges consécutives.",
+      "Assurance voyage : Couverture médicale pour les urgences et rapatriement, d'un montant minimum de 30 000 €.",
+      "Justificatif d'hébergement: Réservation d'hôtel confirmée, ou attestation d'accueil/hébergement privé validée, ou preuve de propriété en Espagne.",
+      "Transport / Trajet : Réservation de billet d'avion aller-retour (TELEX)",
+      "Preuve de situation socio-professionnelle : Salarié, commerçant, profession libérale, étudiant, retraité ou sans emploi (attestations de travail, registre de commerce, justificatifs de revenus, relevés bancaires des derniers mois, etc.).",
+      "Preuves de ressources financières : Relevés bancaires récents (en dinars et/ou compte devises) ou prise en charge financière.",
+      "État civil : Fiche familiale d'état civil (et/ou acte de naissance), traduites en français ou en espagnol si elles sont établies en arabe.",
+      "Lettre d'invitation ou prise en charge par un résident en Espagne, si applicable.",
     ],
     markerPriority: 2,
   },
@@ -3337,153 +3365,6 @@ const curatedGuidance: Record<string, CuratedVisaGuidance> = {
   },
 };
 
-/* Legacy starter visa guidance retained below only as an archived reference.
-const curatedGuidanceold: Record<string, CuratedVisaGuidance> = {
-  fr: {
-    status: "visa-required",
-    stayDays: 90,
-    processingDays: "15–45 days",
-    fee: 90,
-    summary:
-      "A short-stay Schengen visa is required for tourism, family visits and business.",
-    requirements: [
-      "Passport valid for 3 months after return",
-      "Proof of accommodation and financial means",
-      "Travel insurance covering at least €30,000",
-    ],
-    markerPriority: 1,
-  },
-  tr: {
-    name: "Türkiye",
-    status: "visa-required",
-    stayDays: 90,
-    processingDays: "Varies",
-    fee: null,
-    summary:
-      "Entry rules may vary by age and passport type. Confirm current exemptions with official authorities.",
-    requirements: [
-      "Valid passport for the intended stay",
-      "Return ticket may be requested",
-    ],
-    importantNotes: [
-      "Entry exemptions can depend on traveler age and passport details; verify with official Turkish authorities.",
-    ],
-    markerPriority: 1,
-  },
-  tn: {
-    status: "visa-free",
-    stayDays: 90,
-    processingDays: "No processing",
-    fee: 0,
-    summary:
-      "Short tourist stays are generally visa-free. Verify current entry rules before travelling.",
-    requirements: [
-      "Valid travel document",
-      "Proof of accommodation may be requested",
-    ],
-    markerPriority: 1,
-  },
-  gb: {
-    name: "United Kingdom",
-    status: "visa-required",
-    stayDays: 180,
-    processingDays: "3–6 weeks",
-    fee: 130,
-    summary: "A Standard Visitor visa must be obtained before travelling.",
-    requirements: [
-      "Online application and biometric appointment",
-      "Proof of funds and accommodation",
-      "Valid passport",
-    ],
-    markerPriority: 2,
-  },
-  ae: {
-    name: "United Arab Emirates",
-    status: "e-visa",
-    stayDays: 30,
-    processingDays: "3–5 working days",
-    fee: 85,
-    summary:
-      "Electronic travel authorization should be obtained before departure.",
-    requirements: [
-      "Passport valid for at least 6 months",
-      "Digital passport photograph",
-      "Return ticket and accommodation details",
-    ],
-    markerPriority: 1,
-  },
-  es: {
-    status: "visa-required",
-    stayDays: 90,
-    processingDays: "15–30 days",
-    fee: 90,
-    summary: "A Schengen short-stay visa is required.",
-    requirements: [
-      "Passport valid for 3 months after return",
-      "Travel medical insurance",
-      "Proof of funds and itinerary",
-    ],
-    markerPriority: 2,
-  },
-  my: {
-    status: "visa-free",
-    stayDays: 90,
-    processingDays: "No processing",
-    fee: 0,
-    summary:
-      "Tourist stays may be visa-free for up to 90 days; verify current rules.",
-    requirements: [
-      "Passport valid for at least 6 months",
-      "Onward travel ticket",
-    ],
-    markerPriority: 3,
-  },
-  jp: {
-    status: "visa-required",
-    stayDays: 90,
-    processingDays: "5–10 working days",
-    fee: 22,
-    summary:
-      "Apply for a short-stay visa through the relevant Japanese mission.",
-    requirements: [
-      "Application form and recent photograph",
-      "Detailed itinerary",
-      "Financial documents",
-    ],
-    markerPriority: 3,
-  },
-  eg: {
-    status: "e-visa",
-    stayDays: 30,
-    processingDays: "7 working days",
-    fee: 25,
-    summary: "An electronic visa may be available for tourist visits.",
-    requirements: [
-      "Passport valid for 6 months",
-      "Reservation confirmation",
-      "Passport copy",
-    ],
-    markerPriority: 2,
-  },
-  ca: {
-    status: "visa-required",
-    stayDays: 180,
-    processingDays: "4–8 weeks",
-    fee: 100,
-    summary: "A temporary resident visa is required before travel.",
-    requirements: [
-      "Online application and biometrics",
-      "Employment and financial records",
-      "Valid passport",
-    ],
-    importantNotes: [
-      "US permanent residents (Green card holders) may enter visa-free.",
-    ],
-    markerPriority: 1,
-  },
-};
-
-*/
 const nonSovereignFlagMetadata: Record<
   string,
   Pick<Country, "name" | "capital" | "region" | "latitude" | "longitude">

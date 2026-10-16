@@ -1,21 +1,210 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr-DZ" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <meta name="theme-color" content="#050708" />
+
+    <!-- ============ PRIMARY SEO (FR = main language for Algeria) ============ -->
+    <title>
+      VisaDZD | Visa pour Algériens : conditions, demande en ligne, destinations
+    </title>
     <meta
       name="description"
-      content="Explorez les conditions de visa dans le monde et préparez votre prochaine demande avec VisaDZD."
+      content="VisaDZD : consultez les conditions de visa de tous les pays pour les Algériens, déposez votre demande de visa en ligne, trouvez la meilleure destination et réservez un voyage organisé."
     />
-    <title>VisaDZD — Intelligence visa mondiale</title>
+    <link rel="canonical" href="https://visadzd.com/" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="author" content="VisaDZD" />
+    <meta name="application-name" content="VisaDZD" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="geo.region" content="DZ" />
+    <meta name="geo.placename" content="Algérie" />
+    <meta name="content-language" content="fr-DZ, ar-DZ, en" />
+
+    <!-- ============ LANGUAGE VERSIONS (hreflang) ============
+         Needs real URLs: /  (fr), /ar/ (Arabic, RTL), /en/ (English).
+         Remove the lines of any language you have not shipped yet. -->
+    <link rel="alternate" hreflang="fr-DZ" href="https://visadzd.com/" />
+    <link rel="alternate" hreflang="fr" href="https://visadzd.com/" />
+    <link rel="alternate" hreflang="ar-DZ" href="https://visadzd.com/ar/" />
+    <link rel="alternate" hreflang="ar" href="https://visadzd.com/ar/" />
+    <link rel="alternate" hreflang="en" href="https://visadzd.com/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://visadzd.com/" />
+
+    <!-- ============ ICONS ============ -->
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
+    <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo.png?v=2" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo.png?v=2" />
+    <!-- Optional: add these files to /public, then uncomment
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    -->
+
+    <!-- ============ BROWSER / MOBILE ============ -->
+    <meta name="theme-color" content="#050708" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="VisaDZD" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <!-- ============ OPEN GRAPH ============ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="VisaDZD" />
+    <meta property="og:url" content="https://visadzd.com/" />
+    <meta property="og:locale" content="fr_DZ" />
+    <meta property="og:locale:alternate" content="ar_DZ" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta
+      property="og:title"
+      content="VisaDZD | Visa pour Algériens : conditions, demande en ligne, destinations"
+    />
+    <meta
+      property="og:description"
+      content="Conditions de visa de tous les pays pour les Algériens, demande en ligne, meilleures destinations et voyages organisés."
+    />
+    <meta property="og:image" content="https://visadzd.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="VisaDZD : carte mondiale des visas pour les Algériens"
+    />
+
+    <!-- ============ TWITTER / X ============ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VisaDZD | Visa pour Algériens" />
+    <meta
+      name="twitter:description"
+      content="Conditions de visa mondiales, demande en ligne, destinations et voyages organisés pour les Algériens."
+    />
+    <meta name="twitter:image" content="https://visadzd.com/og-image.jpg" />
+
+    <!-- ============ PERFORMANCE ============ -->
     <link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin />
+    <link rel="dns-prefetch" href="https://basemaps.cartocdn.com" />
+
+    <!-- ============ STRUCTURED DATA (JSON-LD) ============ -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://visadzd.com/#organization",
+            "name": "VisaDZD",
+            "alternateName": ["Visa DZ", "فيزا دي زد د", "تأشيرة الجزائر"],
+            "url": "https://visadzd.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://visadzd.com/favicon.ico"
+            },
+            "areaServed": { "@type": "Country", "name": "Algérie" },
+            "knowsLanguage": ["fr", "ar", "en"],
+            "description": "Plateforme d'information et de demande de visa en ligne pour les citoyens algériens."
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://visadzd.com/#website",
+            "url": "https://visadzd.com/",
+            "name": "VisaDZD",
+            "inLanguage": ["fr-DZ", "ar-DZ", "en"],
+            "publisher": { "@id": "https://visadzd.com/#organization" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://visadzd.com/#webpage",
+            "url": "https://visadzd.com/",
+            "name": "VisaDZD | Visa pour Algériens : conditions, demande en ligne, destinations",
+            "isPartOf": { "@id": "https://visadzd.com/#website" },
+            "about": { "@id": "https://visadzd.com/#organization" },
+            "inLanguage": "fr-DZ",
+            "description": "Conditions de visa de tous les pays pour les Algériens, demande en ligne, destinations et voyages organisés."
+          },
+          {
+            "@type": "Service",
+            "@id": "https://visadzd.com/#service",
+            "serviceType": "Assistance visa et voyages organisés",
+            "provider": { "@id": "https://visadzd.com/#organization" },
+            "areaServed": { "@type": "Country", "name": "Algérie" },
+            "audience": {
+              "@type": "Audience",
+              "audienceType": "Citoyens algériens",
+              "geographicArea": { "@type": "Country", "name": "Algérie" }
+            }
+          }
+        ]
+      }
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
+
+    <!-- Crawler / no-JS fallback content (trilingual) -->
+    <noscript>
+      <main
+        style="
+          font-family: system-ui, sans-serif;
+          max-width: 760px;
+          margin: 0 auto;
+          padding: 24px;
+          color: #e8eaed;
+          background: #050708;
+        "
+      >
+        <section lang="fr">
+          <h1>VisaDZD : le visa pour les Algériens, simplifié</h1>
+          <p>
+            Consultez sur une carte mondiale les conditions de visa pour les
+            passeports algériens, déposez votre demande de visa en ligne,
+            découvrez les meilleures destinations et réservez des voyages
+            organisés.
+          </p>
+          <ul>
+            <li>Conditions de visa de tous les pays pour les Algériens</li>
+            <li>Demande de visa en ligne (touristique, affaires, études)</li>
+            <li>Meilleures destinations selon votre budget</li>
+            <li>Voyages organisés depuis l'Algérie</li>
+          </ul>
+        </section>
+        <section lang="ar" dir="rtl">
+          <h2>VisaDZD: كل ما يخص التأشيرة للجزائريين</h2>
+          <p>
+            اطّلع على شروط التأشيرة لجميع دول العالم للمواطنين الجزائريين، قدّم
+            طلب التأشيرة عبر الإنترنت، اكتشف أفضل الوجهات واحجز رحلات منظّمة.
+          </p>
+        </section>
+        <section lang="en">
+          <h2>VisaDZD: visa requirements for Algerian citizens</h2>
+          <p>
+            Check worldwide visa requirements for Algerian passport holders,
+            apply for a visa online, find the best destinations and book
+            organized tours.
+          </p>
+        </section>
+        <p>
+          Veuillez activer JavaScript pour utiliser VisaDZD. / يرجى تفعيل
+          جافاسكريبت. / Please enable JavaScript.
+        </p>
+      </main>
+    </noscript>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
