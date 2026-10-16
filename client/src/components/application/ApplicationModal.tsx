@@ -8,6 +8,8 @@ import {
   type ApplicationFormValues,
 } from "../../schemas/application.schema";
 import { useApplicationSubmission } from "../../hooks/useApplicationSubmission";
+import SubmissionLoader from "../common/SubmissionLoader";
+import { VISA_TYPE_LABEL_KEYS, VISA_TYPE_VALUES } from "../../lib/visa-types";
 import type { Country } from "../../types/country";
 import type { SupportedLanguage } from "../../types/application";
 
@@ -158,10 +160,35 @@ export default function ApplicationModal({
               <input type="hidden" {...register("countryName")} />
               <input type="hidden" {...register("language")} />
               <label>
+                {t("visaType")}
+                <select
+                  defaultValue=""
+                  aria-invalid={Boolean(errors.visaType)}
+                  aria-describedby={
+                    errors.visaType ? "visaType-error" : undefined
+                  }
+                  {...register("visaType")}
+                >
+                  <option value="" disabled>
+                    {t("visaTypePlaceholder")}
+                  </option>
+                  {VISA_TYPE_VALUES.map((type) => (
+                    <option key={type} value={type}>
+                      {t(VISA_TYPE_LABEL_KEYS[type])}
+                    </option>
+                  ))}
+                </select>
+                {fieldError("visaType") && (
+                  <small id="visaType-error" className="field-error">
+                    {fieldError("visaType")}
+                  </small>
+                )}
+              </label>
+              <label>
                 {t("fullName")}
                 <input
                   autoComplete="name"
-                  placeholder="Samira B."
+                  placeholder="nome et prénom"
                   aria-invalid={Boolean(errors.fullName)}
                   aria-describedby={
                     errors.fullName ? "fullName-error" : undefined
@@ -179,7 +206,7 @@ export default function ApplicationModal({
                 <input
                   type="email"
                   autoComplete="email"
-                  placeholder="samira@email.com"
+                  placeholder="votre-email@email.com"
                   aria-invalid={Boolean(errors.email)}
                   aria-describedby={errors.email ? "email-error" : undefined}
                   {...register("email")}
@@ -228,7 +255,7 @@ export default function ApplicationModal({
                 {t("message")}
                 <textarea
                   rows={3}
-                  placeholder="…"
+                  placeholder="Entrez votre message..."
                   aria-invalid={Boolean(errors.message)}
                   {...register("message")}
                 />
@@ -271,6 +298,7 @@ export default function ApplicationModal({
           </>
         )}
       </section>
+      {submission.isPending && <SubmissionLoader label={t("sending")} />}
     </div>
   );
 }

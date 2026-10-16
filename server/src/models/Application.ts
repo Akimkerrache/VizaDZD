@@ -1,5 +1,7 @@
 import mongoose, { type InferSchemaType } from "mongoose";
 
+import { VISA_TYPES } from "../schemas/application.js";
+
 const applicationSchema = new mongoose.Schema(
   {
     countryCode: {
@@ -11,6 +13,7 @@ const applicationSchema = new mongoose.Schema(
       index: true,
     },
     countryName: { type: String, required: true, trim: true, maxlength: 100 },
+    visaType: { type: String, enum: VISA_TYPES, required: true, index: true },
     fullName: { type: String, required: true, trim: true, maxlength: 120 },
     email: {
       type: String,

@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { VISA_TYPE_VALUES } from "../lib/visa-types";
 
 const travelDateSchema = z.string().refine((value) => {
   if (!value) return true;
@@ -15,6 +16,7 @@ export const applicationSchema = z.object({
     .trim()
     .regex(/^[A-Z]{2}(?:-[A-Z]{3})?$/i),
   countryName: z.string().trim().min(1).max(100),
+  visaType: z.enum(VISA_TYPE_VALUES),
   fullName: z.string().trim().min(2).max(120),
   email: z.string().trim().email().max(254),
   phone: z

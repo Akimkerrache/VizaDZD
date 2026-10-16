@@ -1,5 +1,16 @@
 import { z } from "zod";
 
+export const VISA_TYPES = [
+  "tourist",
+  "business",
+  "student",
+  "work",
+  "family",
+  "medical",
+  "transit",
+  "other",
+] as const;
+
 const travelDateSchema = z
   .string()
   .trim()
@@ -21,6 +32,7 @@ export const applicationSchema = z
       .regex(/^[A-Z]{2}(?:-[A-Z]{3})?$/i)
       .transform((value) => value.toUpperCase()),
     countryName: z.string().trim().min(1).max(100),
+    visaType: z.enum(VISA_TYPES),
     fullName: z.string().trim().min(2).max(120),
     email: z.string().trim().email().max(254),
     phone: z

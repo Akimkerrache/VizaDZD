@@ -1178,6 +1178,81 @@ a:focus-visible {
   width: auto;
 }
 
+.application-form select {
+  width: 100%;
+  min-height: 40px;
+  padding: 0 11px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  outline: 0;
+  color: #f1f5f2;
+  background: rgba(255, 255, 255, 0.04);
+  color-scheme: dark;
+  font-size: 11px;
+}
+.application-form select:focus {
+  border-color: rgba(0, 251, 4, 0.55);
+}
+.application-form select[aria-invalid="true"] {
+  border-color: #f2847c;
+}
+
+.submission-loader {
+  position: fixed;
+  z-index: 60;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  background: rgba(5, 7, 8, 0.6);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  animation: fade-in 0.2s ease-out;
+}
+.submission-loader-logo {
+  width: min(150px, 38vw);
+  height: auto;
+  filter: drop-shadow(0 0 24px rgba(0, 251, 4, 0.25));
+  animation: loader-breathe 1.8s ease-in-out infinite;
+}
+.submission-loader-dots {
+  display: flex;
+  gap: 8px;
+}
+.submission-loader-dots i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  animation: loader-dot 1.2s ease-in-out infinite;
+}
+.submission-loader-dots i:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.submission-loader-dots i:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes loader-dot {
+  0%,
+  80%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0) scale(0.8);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1);
+  }
+}
+@keyframes loader-breathe {
+  50% {
+    transform: scale(1.05);
+    opacity: 0.88;
+  }
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);

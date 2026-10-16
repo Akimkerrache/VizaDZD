@@ -4,7 +4,7 @@ import type { CanonicalVisaStatus, VisaStatus } from "../types/visa";
 export const VISA_COLORS: Record<CanonicalVisaStatus, string> = {
   "visa-free": "#00fb04",
   "e-visa": "#00a8ff",
-  "visa-on-arrival": "#d95f02",
+  "visa-on-arrival": "#F5F100",
   "embassy-visa": "#ff8a00",
   "no-access": "#ff2b2b",
   "visa-unknown": "#8b9990",
